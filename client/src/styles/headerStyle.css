@@ -1,0 +1,90 @@
+.restaurant{
+    color: goldenrod;
+    text-decoration: none;
+}
+
+.navigation-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+}
+
+.navigation-menu li{
+    margin: 0px 20px;
+    font-size: 20px;
+}
+
+.navigation-menu li a{
+    text-decoration: none;
+    color: black;
+}
+
+.navigation-menu .btn:hover{
+    border: 1px solid black;
+    background-color: yellow;
+}
+
+.acitvate:hover{
+    color:goldenrod !important;
+    font-weight: bold !important;
+}
+
+.appbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fitness-logo{
+    transition: all 500ms;
+}
+
+.fitness-logo:hover{
+    transform: scale(1.1) !important;
+}
+
+/* mobile view */
+.mobile-navigation{
+    list-style:none;
+}
+.mobile-navigation li{
+    text-decoration: none;
+    margin-top: 1.4rem;
+    font-size: 18px;
+}
+.mobile-navigation li a{
+    text-decoration: none;
+    color: black;
+}
+
+.instagram{
+    color: white;
+}
+
+.space{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile{
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image{
+    border-radius: 50px;
+    height: 45px;
+    width: 45px;
+    transition: all 500ms;
+}
+
+.profile-image:hover{
+    transform: scale(1.2) !important;
+}

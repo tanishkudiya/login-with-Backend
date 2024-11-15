@@ -1,0 +1,21 @@
+/* src/styles/components/FoodSearch.css */
+.food-search {
+    margin: 20px 0;
+  }
+  
+  .food-search input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .food-search button {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+  }
+  

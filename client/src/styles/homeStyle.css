@@ -1,0 +1,68 @@
+.home{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home .homeContainer{
+    margin-left: 200px;
+    width: auto;
+}
+
+.home .homeContainer h4{
+    color: white;
+}
+.home .homeContainer h3{
+    color: white;
+}
+
+.home .homeContainer h5{
+    color: white;
+}
+.home .homeContainer p{
+    color: white;
+}
+
+
+@media only screen and (max-width:600px) {
+    .home{
+        justify-content: center;
+        align-items: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .homeContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+        border-radius: 10px;
+        background-color: #121619;
+        margin-left: 0px;
+        color: white;
+    }
+
+    .home .homeContainer h4{
+        color: white;
+        margin: 35px 35px;
+        height: 30px;
+        font-size: 40px;
+    }
+    .home .homeContainer h5{
+        color: white;
+        font-size: 25px;
+        margin: 0px 15px;
+    }
+    .home ,.homeContainer Button{
+        margin-bottom: 25px;
+        background-color: white;
+        color: black;
+    }
+}

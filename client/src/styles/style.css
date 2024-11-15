@@ -1,0 +1,154 @@
+.working {
+    border: 1px solid black !important;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.homework {
+    width: 50%;
+}
+
+.list-workout {
+    list-style: none;
+    border: 0.5px solid black !important;
+    padding: 20px;
+    width: 250px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px 1px rgb(83, 82, 82);
+}
+
+.bmi {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.addworkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4;
+}
+
+.green-box {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .bmi {
+        width: 100%;
+        margin: 20px;
+    }
+
+    .homework {
+        width: 100%;
+    }
+}
+
+.streak-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.streak-grid {
+    display: grid;
+    grid-template-columns: repeat(365, 1fr);
+    /* adjust for desired grid width */
+    grid-gap: 2px;
+    width: calc(100% - 2px);
+    /* adjust for grid gap */
+}
+
+.streak-square {
+    height: 20px;
+    width: 20px;
+    background-color: var(--streak-color, gray);
+    /* define default color */
+}
+
+.green {
+    background-color: green;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #333;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #333;
+    cursor: pointer;
+}
+
+/* Custom checkbox styles */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background: white;
+}
+
+input[type="checkbox"]:checked {
+    background: #333;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+}

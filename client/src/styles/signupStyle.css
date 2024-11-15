@@ -1,0 +1,19 @@
+.signup{
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.rounded{
+    width: 400px !important;
+    margin: 1rem;
+}
+
+@media (max-widht:600px) {
+    .signup{
+        display: inline;
+    }
+}
