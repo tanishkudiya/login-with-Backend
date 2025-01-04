@@ -13,7 +13,6 @@ import { NavLink } from "react-router-dom";
 // import Layout from "./components/layout/layout";
 import Photo from "./images/istockphoto-1092670800-1024x1024.jpg";
 import "./styles/signupStyle.css"
-import { AuthContext } from "../src/context/AuthContext";
 
 
 export default function Login() {

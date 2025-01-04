@@ -36,7 +36,7 @@ const WorkoutTodo = () => {
       dueDate,
       exercises,
     };
-
+    
     try {
       const response = await fetch('http://localhost:5000/api/workouts', {
         method: 'POST',
@@ -58,97 +58,86 @@ const WorkoutTodo = () => {
     }
   };
 
-//  const email = document.getElementById('#email').value;
   return (
     <Layout>
-    <div className='d-flex justify-content-center align-items-center flex-wrap flex-column'>
-    <form className='working' onSubmit={handleSubmit}>
-      <h2 className='d-flex justify-content-center align-items-center flex-wrap flex-column'>Add Workout  {date ? new Date(date).toLocaleDateString():""}</h2>
-      <div>
-        <label for='sets' className='form-label'><b>Date:</b></label>
-        <input id='sets' className='form-control' type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-      </div>
-      <br />
-      <br />
-      <div>
-        <label for='name' className='form-label'><b>Workout Name:</b></label>
-        {/* <input id='name' className='form-control' type="text" value={workoutName} onChange={(e) => setWorkoutName(e.target.value)} required /> */}
-        <select id='name' className='form-control' required value={workoutName} onChange={(e) => setWorkoutName(e.target.value)}>
-                <option value="">Select Exercise</option>
-                <option value="Chest">Chest</option>
-                <option value="Back">Back</option>
-                <option value="Hamstrings">Hamstrings</option>
-                <option value="Quads">Quads</option>
-                <option value="Triceps">Triceps</option>
-                <option value="Biceps">Biceps</option>
-                <option value="Shoulders">Shoulders</option>
+      <div className='d-flex justify-content-center align-items-center flex-wrap flex-column'>
+        <form className='working' onSubmit={handleSubmit}>
+          <h2 className='d-flex justify-content-center align-items-center flex-wrap flex-column'>Add Workout  {date ? new Date(date).toLocaleDateString() : ""}</h2>
+          <div>
+            <label for='sets' className='form-label'><b>Date:</b></label>
+            <input id='sets' className='form-control' type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+          </div>
+          <br />
+          <div>
+            <label for='name' className='form-label'><b>Workout Name:</b></label>
+            {/* <input id='name' className='form-control' type="text" value={workoutName} onChange={(e) => setWorkoutName(e.target.value)} required /> */}
+            <select id='name' className='form-control' required value={workoutName} onChange={(e) => setWorkoutName(e.target.value)}>
+              <option value="">Select Exercise</option>
+              <option value="Chest">Chest</option>
+              <option value="Back">Back</option>
+              <option value="Hamstrings">Hamstrings</option>
+              <option value="Quads">Quads</option>
+              <option value="Triceps">Triceps</option>
+              <option value="Biceps">Biceps</option>
+              <option value="Shoulders">Shoulders</option>
             </select>
+          </div>
+          <br />
+          <h5>Exercises</h5>
+          {exercises.map((exercise, index) => (
+            <div key={index}>
+              <input
+                type="text"
+                name="exerciseName"
+                placeholder="Exercise Name"
+                value={exercise.exerciseName}
+                onChange={(e) => handleExerciseChange(index, e)}
+                required
+                className='form-control'
+              />
+              <br />
+              <input
+                type="number"
+                name="sets"
+                placeholder="Sets"
+                value={exercise.sets}
+                onChange={(e) => handleExerciseChange(index, e)}
+                required
+                className='form-control'
+              />
+              <br />
+              <input
+                type="number"
+                name="reps"
+                placeholder="Reps"
+                value={exercise.reps}
+                onChange={(e) => handleExerciseChange(index, e)}
+                required
+                className='form-control'
+              />
+              <br />
+              <input
+                type="number"
+                name="weight"
+                placeholder="Weight"
+                value={exercise.weight}
+                onChange={(e) => handleExerciseChange(index, e)}
+                className='form-control'
+                required
+              />
+              <br />
+              <button type="button" className='btn btn-danger' onClick={() => handleRemoveExercise(index)}>Remove</button>
+              <br />
+              <br />
+            </div>
+          ))}
+          <br />
+          <div className='d-flex justify-content-center align-items-center'>
+            <button type="button" className='btn btn-success' onClick={handleAddExercise}>Add Exercise</button>
+            <button type="submit" className='btn btn-success'>Submit Workout</button>
+          </div>
+        </form>
       </div>
-      <br />
-      <h5>Exercises</h5>
-      {exercises.map((exercise, index) => (
-        <div key={index}>
-          <input
-            type="text"
-            name="exerciseName"
-            placeholder="Exercise Name"
-            value={exercise.exerciseName}
-            onChange={(e) => handleExerciseChange(index, e)}
-            required
-            className='form-control'
-          />
-          <br />
-          <input
-            type="number"
-            name="sets"
-            placeholder="Sets"
-            value={exercise.sets}
-            onChange={(e) => handleExerciseChange(index, e)}
-            required
-            className='form-control'
-          />
-          <br />
-          <input
-            type="number"
-            name="reps"
-            placeholder="Reps"
-            value={exercise.reps}
-            onChange={(e) => handleExerciseChange(index, e)}
-            required
-            className='form-control'
-          />
-          <br />
-          <input
-            type="number"
-            name="weight"
-            placeholder="Weight"
-            value={exercise.weight}
-            onChange={(e) => handleExerciseChange(index, e)}
-            className='form-control'
-            required
-          />
-          <input
-            type="string"
-            name="email"
-            placeholder="email"
-            value={exercise.auth}
-            onChange={(e) => handleExerciseChange(index, e)}
-            className='form-control'
-            required
-          />
-          <br />
-          <button type="button" className='btn btn-danger' onClick={() => handleRemoveExercise(index)}>Remove</button>
-          <br />
-          <br />
-        </div>
-      ))}
-      <br />
-      <div className='d-flex justify-content-center align-items-center'>
-      <button type="button" className='btn btn-success' onClick={handleAddExercise}>Add Exercise</button>
-      <button type="submit" className='btn btn-success'>Submit Workout</button>
-      </div>
-    </form>
-    </div>
     </Layout>
   );
 };

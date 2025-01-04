@@ -87,82 +87,16 @@ export default function Footer() {
                         <Box className="d-flex  flex-column" >
                             <ul className="list-unstyled">
                                 <li>
-                                    <Link className="instagram m-1 text-decoration-none" to={"https://www.google.com/"}><InstagramIcon /> <span className="mx-2">Instagram</span> </Link>
+                                    <Link className="instagram m-1 text-decoration-none" to={"https://www.instagram.com/"}><InstagramIcon /> <span className="mx-2">Instagram</span> </Link>
                                 </li>
                                 <li>
-                                    <Link className="instagram m-1 text-decoration-none" to={"https://www.google.com/"}><XIcon /> <span className="mx-2">Twitter</span></Link>
+                                    <Link className="instagram m-1 text-decoration-none" to={"https://www.twitter.com/"}><XIcon /> <span className="mx-2">Twitter</span></Link>
                                 </li>
                                 <li>
-                                    <Link className="instagram m-1 text-decoration-none" to={"https://www.google.com/"}><GitHubIcon /> <span className="mx-2">Github</span> </Link>
+                                    <Link className="instagram m-1 text-decoration-none" to={"https://www.github.com/"}><GitHubIcon /> <span className="mx-2">Github</span> </Link>
                                 </li>
                                 <li>
-                                    <Link className="instagram m-1 text-decoration-none" to={"https://www.google.com/"}><YouTubeIcon /> <span className="mx-2">Youtube</span> </Link>
-                                </li>
-                            </ul>
-                        </Box>
-                    </Box>
-                    <Box className="d-flex  flex-column mx-5">
-                        <h4>Explore</h4>
-                        <Box className="d-flex  flex-column">
-                            <ul className="list-unstyled">
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                            </ul>
-                        </Box>
-                    </Box>
-                    <Box className="d-flex  flex-column mx-5">
-                        <h4>Explore</h4>
-                        <Box className="d-flex  flex-column">
-                        <ul className="list-unstyled">
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                            </ul>
-                        </Box>
-                    </Box>
-                    <Box className="d-flex  flex-column mx-5">
-                        <h4>Explore</h4>
-                        <Box className="d-flex  flex-column">
-                        <ul className="list-unstyled">
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
-                                </li>
-                                <li>
-                                    <Link className="text-decoration-none text-white" to={""}>Explore</Link>
+                                    <Link className="instagram m-1 text-decoration-none" to={"https://www.youtube.com/"}><YouTubeIcon /> <span className="mx-2">Youtube</span> </Link>
                                 </li>
                             </ul>
                         </Box>

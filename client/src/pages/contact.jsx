@@ -10,7 +10,8 @@ export default function Contact() {
             <Box sx={{
                 textAlign: "center",
                 p: 2,
-                m: 15,
+                my: 15,
+                mx:10,
                 "& h4": {
                     fontSize: "30px",
                     fontWeight: "bold",
@@ -30,7 +31,7 @@ export default function Contact() {
                 <Typography variant="h4">
                     Contact Fitness Tracker website
                 </Typography>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore veritatis quos voluptates optio fugiat blanditiis tempora. Alias, cum veritatis! Odit nostrum totam dolores, officia qui asperiores id quae repellat numquam reprehenderit expedita dolorum dicta vero voluptates, aspernatur deleniti earum facere. Quo earum, magnam veritatis, voluptatem non quam minima consectetur excepturi reprehenderit quod sunt est rerum odio. Autem nostrum, voluptatem tempora aut error labore nulla neque. Non in numquam corrupti voluptatum, quasi consequatur facilis libero et necessitatibus iusto deserunt repellat qui.</p>
+                <p>We’d love to hear from you! At Fitness Tracker, your feedback, questions, and suggestions help us improve and serve you better. Whether you’re experiencing an issue, have a feature request, or simply want to say hello, feel free to reach out to us using the details below.</p>
             </Box>
             <Box sx={{
                 m: 3,

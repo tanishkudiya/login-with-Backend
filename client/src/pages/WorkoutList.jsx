@@ -5,8 +5,7 @@ import "../styles/addstyle.css"
 import Layout from '../components/layout/layout';
 import DeleteOutlineTwoToneIcon from '@mui/icons-material/DeleteOutlineTwoTone';
 
-
-const WorkoutList = ({userEmail}) => {
+const WorkoutList = () => {
   const [workouts, setWorkouts] = useState([]);
   const location = useLocation();
 
@@ -22,7 +21,7 @@ const WorkoutList = ({userEmail}) => {
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/workouts/${userEmail}`);
+        const response = await fetch(`http://localhost:5000/api/workouts`);
         const data = await response.json();
         setWorkouts(data);
         console.log(data);
@@ -32,7 +31,7 @@ const WorkoutList = ({userEmail}) => {
     };
 
     fetchWorkouts();
-  }, [userEmail]);
+  }, []);
 
   const handleDeleteWorkout = async (id) => {
     try {
@@ -70,7 +69,6 @@ const WorkoutList = ({userEmail}) => {
                     <p><b>Sets:</b> {exercise.sets}</p>
                     <p><b>Reps:</b> {exercise.reps}</p>
                     <p><b>Weight:</b> {exercise.weight} kg</p>
-                    <p>{exercise.auth} </p>
                   </li>
                 ))}
               </ul>

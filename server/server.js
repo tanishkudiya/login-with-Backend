@@ -98,35 +98,35 @@ const WorkoutModel = require("./models/workout");
 const jwt = require('jsonwebtoken');
 
 // Secret key for signing the JWT
-const SECRET_KEY = 'your_secret_key';
+// const SECRET_KEY = 'your_secret_key';
 
 // Function to generate a JWT
-function generateToken(user) {
-    // Payload can include user data
-    const payload = {
-        id: user.id,
-        email: user.email
-    };
+// function generateToken(user) {
+//     // Payload can include user data
+//     const payload = {
+//         id: user.id,
+//         email: user.email
+//     };
 
-    // Generate token (expires in 1 hour)
-    const token = jwt.sign(payload, SECRET_KEY, { expiresIn: '1h' });
+//     // Generate token (expires in 1 hour)
+//     const token = jwt.sign(payload, SECRET_KEY, { expiresIn: '1h' });
 
-    return token;
-}
+//     return token;
+// }
 
 
 
 app.use(express.json());
 app.use(cors());
 
-app.use(bodyParser.json({ limit: '50mb' })); // Increase limit to 10MB or adjust as needed
+// app.use(bodyParser.json({ limit: '50mb' })); // Increase limit to 10MB or adjust as needed
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 const User = require('./models/User');
 
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect("mongodb+srv://<username>:<password>@cluster.mongodb.net/workoutDB", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb://127.0.0.1:27017/workoutDB", { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB connection error:", err));
 
@@ -157,21 +157,21 @@ app.post("/login", async (req, res) => {
 });
 
 
-const authenticateToken = (req, res, next) => {
-  const token = req.headers["authorization"];
-  if (!token) return res.status(401).json({ message: "Access denied" });
+// const authenticateToken = (req, res, next) => {
+//   const token = req.headers["authorization"];
+//   if (!token) return res.status(401).json({ message: "Access denied" });
 
-  jwt.verify(token, JWT_SECRET, (err, user) => {
-    if (err) return res.status(403).json({ message: "Invalid token" });
-    req.user = user;
-    next();
-  });
-};
+//   jwt.verify(token, JWT_SECRET, (err, user) => {
+//     if (err) return res.status(403).json({ message: "Invalid token" });
+//     req.user = user;
+//     next();
+//   });
+// };
 
-// Protected Route Example
-app.get("/api/protected", authenticateToken, (req, res) => {
-  res.json({ message: "This is a protected route", userId: req.user.userId });
-});
+// // Protected Route Example
+// app.get("/api/protected", authenticateToken, (req, res) => {
+//   res.json({ message: "This is a protected route", userId: req.user.userId });
+// });
 
 
 
@@ -195,27 +195,6 @@ app.post('/api/workouts', async (req, res) => {
   }
 });
 
-app.get('/api/workouts/:email', async (req, res) => {
-  const { email } = req.params; // Extract email from request parameters
-
-  try {
-    // Find workouts that match the provided email
-    const workouts = await Workout.find({ email });
-    if (!workouts || workouts.length === 0) {
-      return res.status(404).json({ message: "No workouts found for this user." });
-    }
-    res.json(workouts); // Return the filtered workouts
-  } catch (err) {
-    console.error('Error fetching workouts:', err);
-    res.status(500).json({ message: "Server error. Please try again later." });
-  }
-});
-
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something went wrong!');
-});
-
 app.delete('/api/workouts/:id', async (req, res) => {
   const { id } = req.params;
   try {
@@ -228,13 +207,12 @@ app.delete('/api/workouts/:id', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-app.get("/api/workouts/:userId", async (req, res) => {
-  const { userId } = req.params;
+app.get('/api/workouts', async (req, res) => {
   try {
-      const workouts = await WorkoutModel.find({ userId });
-      res.json(workouts);
-  } catch (err) {
-      res.status(400).json(err);
+    const workouts = await Workout.find();
+    res.status(200).json(workouts);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 });
 

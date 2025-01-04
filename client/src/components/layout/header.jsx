@@ -34,11 +34,11 @@ export default function Header() {
             <Divider />
             <ul className="mobile-navigation">
                 <li>
-                    <Link to={"/home"}>Home</Link>
+                    <Link to={"/"}>Home</Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link to={"/menu"}>Menu</Link>
-                </li>
+                </li> */}
                 <li>
                     <Link to={"/about"}>About</Link>
                 </li>
@@ -46,13 +46,19 @@ export default function Header() {
                     <Link to={"/contact"}>Contact</Link>
                 </li>
                 <li>
-                    <Link to={"/workout-list"}>Workout</Link>
+                    <NavLink to={"/workout-todo"}>Workout Form</NavLink>
                 </li>
                 <li>
-                    <Link to={"/userprofile"}>User</Link>
+                    <Link to={"/workout-list"}>Workout List</Link>
                 </li>
                 <li>
-                    <Link to={"/login"}>Logout</Link>
+                    <Link to={"/bmi"}>BMICalculator</Link>
+                </li>
+                <li>
+                    {/* <Link to={"/userprofile"}>User</Link> */}
+                </li>
+                <li>
+                    {/* <Link to={"/login"}>Logout</Link> */}
                 </li>
                 {/* <li>
                     <Link to={"/register"}>Sign up</Link>
@@ -76,18 +82,18 @@ export default function Header() {
                             <MenuIcon />
                         </IconButton>
                         <Typography color="goldenrod" variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            <NavLink to={"/home"}><img src={Fitness} className="fitness-logo" alt="logo" height={"70"} width={"250"} /></NavLink>
+                            <NavLink to={"/"}><img src={Fitness} className="fitness-logo" alt="logo" height={"70"} width={"250"} /></NavLink>
                         </Typography>
                         <Box className="space" sx={{ display: { xs: "none", sm: "block" } }}>
                             <ul className="navigation-menu">
                                 <li>
                                     <NavLink
                                         activeClassName="active" className="activate"
-                                        to={"/home"}>Home</NavLink>
+                                        to={"/"}>Home</NavLink>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <NavLink to={"/menu"}>Menu</NavLink>
-                                </li>
+                                </li> */}
                                 <li>
                                     <NavLink to={"/about"}>About</NavLink>
                                 </li>
@@ -101,19 +107,19 @@ export default function Header() {
                                     <NavLink to={"/workout-list"}>WorkoutList</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={"/nutrition"}>Nutrition</NavLink>
+                                    <NavLink to={"/bmi"}>BMICalculator</NavLink>
                                 </li>
                             </ul>
                         </Box>
 
                         <Box sx={{ display: { xs: "none", sm: "block" } }}>
                             <ul className="navigation-menu">
-                                <button type="button" className="profile" ><li>
+                                {/* <button type="button" className="profile" ><li>
                                     <NavLink to={"/userprofile"}> <img className="profile-image" src={Profile} alt="" /> </NavLink>
-                                </li></button>
-                                <button type="button" className="btn"><li>
+                                </li></button> */}
+                                {/* <button type="button" className="btn"><li>
                                     <NavLink to={"/"}>Logout</NavLink>
-                                </li></button>
+                                </li></button> */}
                                 {/* <button type="button" className="btn"><li>
                                     <NavLink to={"/register"}>Signup</NavLink>
                                 </li></button> */}
